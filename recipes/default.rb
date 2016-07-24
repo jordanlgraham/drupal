@@ -196,10 +196,10 @@ node[:drupal][:sites].each do |site_name, site|
 
         Chef::Log.debug("Drupal::default: before_migrate: release_path = #{release_path}")
         Chef::Log.debug("Drupal::default: before_migrate: link #{release_path}/#{site[:drupal][:settings][:files]} to #{assets}/files")
-        link "#{release_path}/#{site[:drupal][:settings][:files]}" do
-          to "#{assets}/files"
-          link_type :symbolic
-        end
+        # link "#{release_path}/#{site[:drupal][:settings][:files]}" do
+        #   to "#{assets}/files"
+        #   link_type :symbolic
+        # end
 
         Chef::Log.debug("Drupal::default: before_migrate: template #{release_path}/#{site[:drupal][:settings][:settings][:default][:location]}")
         template "#{release_path}/#{site[:drupal][:settings][:settings][:default][:location]}" do
